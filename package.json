@@ -1,0 +1,15 @@
+{
+  "name": "neteasemusic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "song.js",
+  "scripts": {
+    "start": "static",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-static": "^0.7.9"
+  }
+}
