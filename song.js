@@ -19,7 +19,7 @@ $(function(){
 	})
 
 	let audio = document.createElement('audio')
-	audio.src = 'http://dl.stream.qqmusic.qq.com/C400003o0esZ3dOnu7.m4a?vkey=E6B22D8019DF21E3020B29A0AD42050A71DAD4C887E61B838C5DFCD1A1E31AA5E0F08440671FB81A307DE1FAA8B954BB78F1936BB78551DD&guid=7587493667&uin=0&fromtag=66'
+	audio.src = '//dl.stream.qqmusic.qq.com/C400003o0esZ3dOnu7.m4a?vkey=E6B22D8019DF21E3020B29A0AD42050A71DAD4C887E61B838C5DFCD1A1E31AA5E0F08440671FB81A307DE1FAA8B954BB78F1936BB78551DD&guid=7587493667&uin=0&fromtag=66'
 	audio.oncanplay = function(){
 		audio.play()
 		$('.disc-container').addClass('playing')
