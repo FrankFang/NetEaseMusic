@@ -1,4 +1,27 @@
 $(function(){
+
+	let id = parseInt(location.search.match(/\bid=([^&]*)/)[1],10)
+
+	$.get('./songs.json').then(function(response){
+		let songs = response
+		let song = songs.filter(s=>s.id === id)[0]
+		let {url} = song
+		let audio = document.createElement('audio')
+		audio.src = url
+		audio.oncanplay = function(){
+			audio.play()
+			$('.disc-container').addClass('playing')
+		}	
+		$('.icon-pause').on('touchstart', function(){
+			audio.pause()	
+			$('.disc-container').removeClass('playing')
+		})
+		$('.icon-play').on('touchstart', function(){
+			audio.play()	
+			$('.disc-container').addClass('playing')
+		})
+	})
+
 	$.get('/lyric.json').then(function(object){
 		let {lyric} = object
 		let array = lyric.split('\n')
@@ -18,18 +41,4 @@ $(function(){
 		})
 	})
 
-	let audio = document.createElement('audio')
-	audio.src = '//7xrxd2.com1.z0.glb.clouddn.com/C400000ryYx71hFmdF.mp4'
-	audio.oncanplay = function(){
-		audio.play()
-		$('.disc-container').addClass('playing')
-	}	
-	$('.icon-pause').on('touchstart', function(){
-		audio.pause()	
-		$('.disc-container').removeClass('playing')
-	})
-	$('.icon-play').on('touchstart', function(){
-		audio.play()	
-		$('.disc-container').addClass('playing')
-	})
 })
