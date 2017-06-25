@@ -19,9 +19,14 @@
 .disc-container .disc{display: flex; justify-content: center; align-items: center; margin-top: 18vw; }
 .disc-container .ring{width: 72vw; } 
 .disc-container .light{width: 72vw; position: absolute; }
-.disc-container .cover{width: 44.5vw; position: absolute; border-radius: 50%;  }
+.disc-container .cover{width: 44.5vw; position: absolute; border-radius: 50%;  
+  animation: circle 20s infinite linear; 
+  animation-play-state: paused;
+}
 .disc-container.playing .light,
-.disc-container.playing .cover{animation: circle 20s infinite linear; }
+.disc-container.playing .cover{
+  animation-play-state: running;
+}
 
 .disc-container .icon-pause{display: none; }
 .disc-container.playing .icon-pause{display: block; }
