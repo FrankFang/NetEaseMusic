@@ -30,6 +30,9 @@ section>h2:first-child{
 .siteNav > ol> li>span{padding-top: 1vw; line-height: 10vw; display: inline-block; position: relative; }
 .siteNav > ol> li.active>span::before{content:''; position: absolute; bottom: 0; border-top: 2px solid #D33A31; left: -2vw; right: -2vw; }
 
+.tabContent > li {display: none;}
+.tabContent > li.active {display: block;}
+
 .playlists{
 	margin-top: 5.5vw;
 }
