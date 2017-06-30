@@ -65,9 +65,15 @@ $(function() {
       search(value).then((result)=>{
         timer = undefined
         if(result.length !== 0){
-          $('#output').text(result.map((r)=>r.name).join(','))
+          $('#output').empty()
+          let $ul = $('<ul></ul>')
+          result.forEach((item)=>{
+            let $li = $(`<li><a href="/song.html?id=${item.id}">${item.name}</a></li>`)
+            $li.appendTo($ul)
+          })
+          $('#output').append($ul)
         }else{
-          $('#output').text('没有结果')
+          $('#output').html('没有结果')
         }
       })
     },300)
