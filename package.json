@@ -4,12 +4,26 @@
   "description": "",
   "main": "song.js",
   "scripts": {
-    "start": "static",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd build; static",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset": "rm -rf build; mkdir build",
+    "css": "postcss *.css -d build/",
+    "images": "imagemin images/* --out-dir=build/images",
+    "static-files": "cp *.html build/ && cp *.json build/",
+    "js": "uglifyjs index.js > build/index.js && uglifyjs song.js > build/song.js",
+    "build": "npm run reset && npm run static-files && npm run css && npm run js && npm run images"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-static": "^0.7.9"
-  }
+    "autoprefixer": "^7.1.1",
+    "cssnano": "^3.10.0",
+    "imagemin-cli": "^3.0.0",
+    "node-static": "^0.7.9",
+    "postcss": "^6.0.4",
+    "postcss-cli": "^4.1.0",
+    "uglify-es": "^3.0.22",
+    "uglify-js": "^3.0.22"
+  },
+  "dependencies": {}
 }
