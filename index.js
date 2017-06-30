@@ -1,3 +1,4 @@
+console.log(3)
 $(function() {
   setTimeout(function() {
     $.get('./songs.json').then(function(response) {
